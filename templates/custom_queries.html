@@ -1,0 +1,7 @@
+Expensive_books:
+{% for book in expensive_books %}
+    <p>Title: {{ book.title }}</p>
+    <p>Author: {{ book.author }}</p>
+    <p>Price: {{ book.price }}</p>
+    <hr>
+{% endfor %}

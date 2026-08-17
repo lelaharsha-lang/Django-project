@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="https://cdn.iconscout.com/icon/free/png-512/free-nike-icon-svg-download-png-2673874.png?f=webp&w=512">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'nike.css' %}">
+    <title>Nike Clone</title>
+</head>
+<body>
+    <div class="body">
+        <div class="header">
+            <div class="nike">
+                <img src="https://cdn.iconscout.com/icon/free/png-512/free-nike-icon-svg-download-png-2673874.png?f=webp&w=512" height="70px">
+            </div>
+            <div class="home-tab">
+                <div class="home"><a href="/">Home</a></div>
+                <div class="men"><a href="/">Men</a></div>
+                <div class="women"><a href="/">Women</a></div>
+                <div class="collection"><a href="/">Collection</a></div>
+                <div class="contact"><a href="/">Contact</a></div>
+                <div class = "signup">
+                    <form action="{% url 'signup' %}">
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+            <div class="search-tab">
+                <div class="search">
+                    <img src="https://cdn.iconscout.com/icon/free/png-512/free-search-icon-svg-download-png-527970.png?f=webp&w=512" height="30px">
+                </div>
+                <div class="cart">
+                    <img src="https://cdn.iconscout.com/icon/free/png-512/free-cart-icon-svg-download-png-458456.png?f=webp&w=512" height="30px">
+                </div>
+                <div class="menu">
+                    <img src="https://cdn.iconscout.com/icon/free/png-512/free-menu-icon-svg-download-png-528011.png?f=webp&w=512" height="42px">
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="text">
+                <div class="explore"><p>Explore Limited Edision</p></div>
+                <div class="bigtext"><p>NIKE LIMITED EDISION</p></div>
+                <div class="para"><p>Unleash the extraordinary.Elevate your game with Nike's Limited Edision where innovation meets style,leaving a lasting mark.Just do it.</p></div>
+                <div class="button"><a href="#" id="a">SHOP NOW</a></div>
+            </div>
+            <div class="images">
+                <div class="img">
+                    <img src="https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/b98d16d8-f75b-4423-aa96-65cd68ac5277/NIKE+COURT+VISION+LO.png" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 1872px; width: 290px; height: 362px; margin: 0px;" alt="Nike Court Vision Low Men's Shoes Size 7 (Black)" jsname="kn3ccd">
+                    <p class="para1">Air Jordan 1</p>
+                    <p class="price">₹19,999</p>
+                </div>
+                <div class="img">
+                    <img src="https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/44f222ab-96b6-43b9-82e7-9a1bd888611d/NIKE+COURT+VISION+LO.png" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 1872px; width: 290px; height: 362px; margin: 0px;" alt="Nike Court Vision Low Men's Shoes. Nike IN" jsname="kn3ccd">
+                    <p class="para1">Nike Court Vision</p>
+                    <p class="price">₹20,000</p>
+                </div>
+                <div class="img">
+                    <img src="https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/47b7945e-a379-4c24-b9df-98f4eef178e5/NIKE+AIR+MAX+PLUS.png" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 1872px; width: 290px; height: 362px; margin: 0px;" alt="Nike Air Max Plus Men's Shoes. Nike IN" jsname="kn3ccd">
+                    <p class="para1">Nike Max Plus</p>
+                    <p class="price">₹39,498</p>
+                </div>
+                <div class="img">
+                    <img src="https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/c78ddcb7-e0eb-4424-90ae-4227f68c5675/NIKE+CORTEZ.png" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 1872px; width: 290px; height: 362px; margin: 0px;" alt="Nike Cortez Leather Men's Shoes Size 6 (White)" jsname="kn3ccd">
+                    <p class="para1">Force 1</p>
+                    <p class="price">₹49,999</p>
+                </div>
+                <div class="img">
+                    <img src="https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/e783e052-9360-4afb-adb8-c4e9c0f5db07/NIKE+AIR+MAX+NUAXIS.png" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 1872px; width: 290px; height: 362px; margin: 0px;" alt="Nike Air Max Nuaxis Men's Shoes Size 10 (Black)" jsname="kn3ccd">
+                    <p class="para1">Max nuaxis</p>
+                    <p class="price">₹99,999</p>
+                </div>
+                <div class="img">
+                    <img src="https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/tjkr8ecmktw7qooy9d0h/NIKE+SHOX+TL.png" jsaction="" class="sFlh5c FyHeAf iPVvYb" style="max-width: 1872px; width: 290px; height: 362px; margin: 0px;" alt="Nike Shox Tl Black" jsname="kn3ccd">
+                    <p class="para1">Nike Shox</p>
+                    <p class="price">₹39,999</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

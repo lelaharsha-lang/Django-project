@@ -1,0 +1,38 @@
+{% load static %}
+<h2>Basic Queries:</h2>
+<h3>All Books:</h3>
+{% for book in context.all_books %}
+    <p><mark>{{ book.title }}</mark> is written in {{ book.language }} by {{ book.author }}</p>
+    <p>Price: ${{ book.price }}</p>
+    <p>Published Date: {{ book.published_date }}</p>
+    <hr>
+{% endfor %}
+<hr>
+<h3>Filtered Books:</h3>
+{% for book in context.filtered_books %}
+    <p><mark>{{ book.title }}</mark> is written in {{ book.language }} by {{ book.author }}</p>
+    <p>Price: ${{ book.price }}</p>
+    <p>Published Date: {{ book.published_date }}</p>
+    <hr>
+{% endfor %}
+<hr>
+<h3>Excluded Books:</h3>
+{% for book in context.excluded_books %}
+    <p><mark>{{ book.title }}</mark> is written in {{ book.language }} by {{ book.author }}</p>
+    <p>Price: ${{ book.price }}</p>
+    <p>Published Date: {{ book.published_date }}</p>
+    <hr>
+{% endfor %}
+<hr>
+<h3>Ordered Books:</h3>
+{% for book in context.ordered_books %}
+    <p><mark>{{ book.title }}</mark> is written in {{ book.language }} by {{ book.author }}</p>
+    <p>Price: ${{ book.price }}</p>
+    <p>Published Date: {{ book.published_date }}</p>
+    <hr>
+{% endfor %}
+<hr>
+<p><mark>{{ context.get_book.title }}</mark> is written in {{ context.get_book.language }} by {{ context.get_book.author }}</p>
+<p>Price: ${{ context.get_book.price }}</p>
+<p>Published Date: {{ context.get_book.published_date }}</p>
+<hr>

@@ -1,0 +1,24 @@
+
+{% load static %}
+<h2>Welcome to the About Page</h2>
+{% block content %}
+total_users: {{ i }}<br><br>
+    <h1>About</h1>
+    {% for user in users %}
+        <h3>{{ user.username }}</h3><br>
+    <h3>{{ user.first_name }}</h3><br>
+    <h3>{{ user.last_name }}</h3><br>
+    <h3>{{ user.email }}</h3><br>
+    <h3>{{ user.password }}</h3><br>
+    <h3>{{ user.mobile_number }}</h3><br>
+    {% if user.image %}
+    <img src="{{ user.image.url }}" alt="Profile Picture" width="200" height="200">
+    {% else %}
+    <p>No image available</p>
+    {% endif %}
+    {% endfor %}
+</h3><br>
+    <b><p>__________________________________</p></b><br><br>
+    <p>Note: The about page is a separate template that extends the index.html template. It overrides the content block to display a different message.</p>
+    <p>This is the about page.</p>
+{% endblock %}

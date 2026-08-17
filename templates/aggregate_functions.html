@@ -1,0 +1,12 @@
+<h2>Aggregate Functions:</h2>
+<p>Average-price: {{ average_price.price__avg }}</p>
+<p>Max-price: {{ max_price.price__max }}</p>
+<p>Min-price: {{ min_price.price__min }}</p>
+<p>Total-price: {{ total_price.price__sum }}</p>
+<p>Author-count: {{ author_count.author__count }}</p>
+<p>Discounted-prices:</p>
+<ul>
+{% for book in annotated_books %}
+    <li>{{ book.title }}: ${{ book.discounted_price }}</li>
+{% endfor %}
+</ul>

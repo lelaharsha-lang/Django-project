@@ -1,0 +1,13 @@
+<h3>Edit Blog Post</h3>
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+{% endfor %}
+<form method="POST" action="{% url 'edit_blog_post' post.id %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    Title: <input type="text" name="title" value="{{ post.title }}"><br>
+    Content: <textarea name="content">{{ post.content }}</textarea><br>
+    Picture: <input type="file" name="picture"><br>
+    <button type="submit">Update Blog Post</button>
+</form>

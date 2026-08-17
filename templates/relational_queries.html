@@ -1,0 +1,7 @@
+{% load static %}
+<h2>relational_queries:</h2>
+{% for book in books %}
+<p><b>{{book.title}}</b> was publised on <b>{{book.published_date}}</b>
+ written by <b>{{book.author}}</b> for ${{book.price}}
+ <hr><hr>
+{% endfor %}

@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>login page</title>
+    </head>
+    <body bgcolor="#10d2e7">
+    {% block content %}
+        <h1>Welcome to My Django App</h1>
+        <p>This is a simple Django login form!.</p>
+        <p>Username: {{ username }}</p>
+        <p>Password: {{ password }}</p>
+        <p>First Name: {{ firstname }}</p>
+        <p>Last Name: {{ lastname }}</p>
+        <p>Email: {{ email }}</p>
+        <p>Mobile: {{ mobile }}</p>
+        <img src="{{ image.url }}" alt="Image" width="200" height="200">
+        <p>Login successful!</p>
+    {% endblock %}
+    </body>
+    </html>

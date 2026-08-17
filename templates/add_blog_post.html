@@ -1,0 +1,27 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'add_blog_post.css' %}">
+</head>
+<h4> Add Blog Post</h4>
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+{% endfor %}
+<form method="POST" action="{% url 'add_blog_post' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+        <label for="title">Title:</label>
+        <input type="text" name="title" placeholder="Enter title:"><br><br>
+    
+        <label for="content">Content:</label>
+        <textarea name="content" placeholder="Enter content:"></textarea><br><br>
+    
+        <label for="picture">Picture:</label>
+        <input type="file" name="picture"><br><br>
+    
+    <button type="submit" formaction="{% url 'add_blog_post' %}">Add Blog Post</button>
+</form>
+<ul>
+<a href="{% url 'view_posts' %}">View Blog Posts</a>
+</ul>

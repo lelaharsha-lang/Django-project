@@ -1,0 +1,32 @@
+{% load static %}
+<p id="heading"><b>View_Blog_Posts</p>
+<head>
+    <link rel="stylesheet" href="{% static 'view_blog_post.css' %}">
+</head>
+<body>
+<div class="link">
+    <a href="{% url 'add_blog_post' %}">Add Blog Post</a>
+    <a href="{% url 'nike1' %}">Back to Home</a>
+</div>
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+{% endfor %}
+    <h3>Blog Posts:</h3>
+    <div class="posts-container">
+    {% for post in posts %}
+    <div class="post-card">
+        <strong>{{ post.title }}</strong>
+        <p>{{ post.content }}</p>
+        {% if post.picture %}
+            <img src="{{ post.picture.url }}" alt="{{ post.title }}">
+        {% endif %}
+        <div class="post-actions">
+            <a href="{% url 'edit_blog_post' post.id %}">Edit</a> |
+            <a href="{% url 'delete_blog_post' post.id %}">Delete</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</body>

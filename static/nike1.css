@@ -1,0 +1,125 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+    background-color: #d0d4D5;
+}
+
+    /* Container for the profile picture */
+.profile-pic {
+    position: absolute;   /* Fixes it relative to the page */
+    top: 10px;            /* Distance from the top */
+    right: 10px;
+    width: 50px;          /* Size of the profile picture */
+    height: 50px;
+    border-radius: 50%;   /* Makes it circular */
+    border: 2px solid #333; /* Optional border */
+    cursor: pointer;      /          /* Distance from the right */
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.search-tab{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:10px; 
+}
+.home-tab{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-right: 350px;
+    font-size: 24px;
+    right: 200px;
+}
+.nike{
+    width: 100px;
+    padding: 0 8px;
+
+}
+.text{
+    height:400px;
+    width: 350px;
+    padding:14px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:100px;
+    margin-left:120px;
+
+}
+.explore{
+    font-size:25px;
+}
+.bigtext{
+font-size:48px;
+font-weight: bold;
+}
+.para{
+font-size:20px;
+}
+#a{
+background-color:black;
+color:white;
+font-size: 12px;
+border:none;
+font-weight:500;
+border-radius: 0 32px 32px 32px;
+width:100px;
+text-decoration: none;
+padding:8px 12px;
+box-shadow: 5px 5px 8px rgba(0,0,0,0.4);
+}
+#a:hover{
+    font-size: 15px;
+}
+.main{
+    display: flex;
+    width: 100%;
+    gap:75px;
+
+}
+footer{
+    text-align: center;
+    align-items: center;
+    font-size: 15px;
+}
+footer a{
+    text-decoration: none;
+    color: rgb(242, 0, 0);
+}
+footer a:hover{
+    text-decoration: underline;
+    color: rgb(30, 125, 221);
+    font-weight: bold;
+    font-size: 17px;
+}
+.images{
+    cursor: pointer;
+    display:flex;
+    gap:40px;
+    white-space:nowrap;
+    max-width:100%;
+    overflow-x:auto;
+    padding:50px 100px;
+    margin-left: 80px;
+}
+.images::-webkit-scrollbar{
+    display: none;
+}
+.para1{
+    font-size: 24px;
+    font-weight: 500;
+}
+.price{
+    font-size: 18px;
+    font-weight: bold;
+}
+.home-tab a{
+    text-decoration: none;
+    color:black;
+}

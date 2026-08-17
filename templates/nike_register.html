@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Register</title>
+  <link rel="stylesheet" href="{% static 'style1.css' %}">
+  <script src="{% static 'script1.js' %}"></script>
+</head>
+<body>
+{% for message in messages %}
+  <p>{{ message }}</p>
+{% endfor %}
+<div class="container">
+    <h2>Register / Login</h2><br>
+    <h2>Register</h2><br>
+    <form id="loginForm" action="{% url 'nike_register' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+    </div>
+  <script src="{% static 'myapp/script.js' %}"></script>
+</body>
+</html>
