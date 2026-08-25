@@ -1,0 +1,85 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b4cbef;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the form */
+form {
+    background: #f1c6c6;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Heading */
+h4 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+/* Inputs and textarea */
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Textarea height */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Submit button */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Link to view posts */
+ul {
+    text-align: center;
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+ul a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+ul a:hover {
+    text-decoration: underline;
+}
