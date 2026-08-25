@@ -1,4 +1,5 @@
 <h3>Edit Blog Post</h3>
+<link rel="stylesheet" href="{% static 'add_blog_post.css' %}">
 {% for message in messages %}
     <div class="alert alert-{{ message.tags }}">
         {{ message }}
