@@ -21,6 +21,14 @@ except ImportError:
 
 # Create your views here.
 
+#supabase storage integration
+
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+def upload_file(file):
+    file_content = file.read()
+    supabase.storage.from_(SUPABASE_BUCKET).upload(file.name, file_content)
+    return supabase.storage.from_(SUPABASE_BUCKET).get_public_url(file.name)
 
 
 def home(request):
@@ -90,7 +98,6 @@ def change_password(request):
 @login_required
 @permission_required('nike.add_blog', raise_exception = True)
 def add_blog_post(request):
-    
     if request.method == "POST":
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
@@ -224,12 +231,3 @@ def custom_queries(request):
     return render(request,'custom_queries.html',{'expensive_books':expensive_books})
 
 
-#supabase storage integration
-
-supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
-
-def upload_file(file):
-    # Upload file to Supabase bucket
-    supabase.storage.from_(SUPABASE_BUCKET).upload(file.name, file)
-    # Get public URL
-    return supabase.storage.from_(SUPABASE_BUCKET).get_public_url(file.name)
