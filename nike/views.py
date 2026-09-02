@@ -9,8 +9,19 @@ from django.contrib.auth import authenticate, login,logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import update_session_auth_hash
+from project1.project1.settings import SUPABASE_BUCKET, SUPABASE_KEY, SUPABASE_URL
 from .models import Blog,Book
+import os
+
+try:
+    from supabase import create_client
+except ImportError:
+    create_client = None
+
+
 # Create your views here.
+
+
 
 def home(request):
     return render(request, 'nike.html')
@@ -211,4 +222,14 @@ def relational_queries(request):
 def custom_queries(request):
     expensive_books = Book.objects.expensive()
     return render(request,'custom_queries.html',{'expensive_books':expensive_books})
- 
+
+
+#supabase storage integration
+
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+def upload_file(file):
+    # Upload file to Supabase bucket
+    supabase.storage.from_(SUPABASE_BUCKET).upload(file.name, file)
+    # Get public URL
+    return supabase.storage.from_(SUPABASE_BUCKET).get_public_url(file.name)

@@ -148,3 +148,9 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+
+#for supabase storage we use django-storages and boto3
+
+SUPABASE_URL = "https://sdtlqhoojgjxvcxcvpax.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkdGxxaG9vamdqeHZjeGN2cGF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzc4MDksImV4cCI6MjEwMzkxMzgwOX0.Cvu6H9XyXsuO6h5zkazOBy4hx1h2wYN_fm6S2TvlQik"
+SUPABASE_BUCKET = "media"
