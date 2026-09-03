@@ -22,8 +22,8 @@ SUPABASE_URL = os.getenv("SUPABASE_URL", "https://sdtlqhoojgjxvcxcvpax.supabase.
 SUPABASE_BUCKET = os.getenv("SUPABASE_BUCKET", "harsha-django-basic")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-
+#SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = 'django-insecure-test-key-1234567890-harsha-project'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
