@@ -151,6 +151,7 @@ AUTH_USER_MODEL = "app1.User"
 LOGIN_URL = 'signup'   
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
@@ -173,4 +174,5 @@ AWS_S3_ENDPOINT_URL = f"{SUPABASE_URL}/storage/v1/s3"
 #SUPABASE_URL = "https://sdtlqhoojgjxvcxcvpax.supabase.co"
 #SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkdGxxaG9vamdqeHZjeGN2cGF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzc4MDksImV4cCI6MjEwMzkxMzgwOX0.Cvu6H9XyXsuO6h5zkazOBy4hx1h2wYN_fm6S2TvlQik"
 #SUPABASE_BUCKET = "harsha-django-basic"
+
 
