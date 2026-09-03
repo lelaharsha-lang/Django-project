@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate, login,logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import update_session_auth_hash
-from project1.project1.settings import SUPABASE_BUCKET, SUPABASE_KEY, SUPABASE_URL
+from django.conf import settings
 from .models import Blog,Book
 import os
 
@@ -23,12 +23,12 @@ except ImportError:
 
 #supabase storage integration
 
-supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+supabase = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY)
 
 def upload_file(file):
     file_content = file.read()
-    supabase.storage.from_(SUPABASE_BUCKET).upload(file.name, file_content)
-    return supabase.storage.from_(SUPABASE_BUCKET).get_public_url(file.name)
+    supabase.storage.from_(settings.SUPABASE_BUCKET).upload(file.name, file_content)
+    return supabase.storage.from_(settings.SUPABASE_BUCKET).get_public_url(file.name)
 
 
 def home(request):

@@ -9,12 +9,18 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-from project1.project1.settings import SUPABASE_BUCKET, SUPABASE_KEY, SUPABASE_URL
+
 import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+import os
+
+SUPABASE_URL = os.getenv("SUPABASE_URL", "https://sdtlqhoojgjxvcxcvpax.supabase.co")
+SUPABASE_BUCKET = os.getenv("SUPABASE_BUCKET", "harsha-django-basic")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 
 # Quick-start development settings - unsuitable for production
@@ -130,7 +136,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # MEDIA_URL ='/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = f"{SUPABASE_URL}/storage/v1/object/public/{SUPABASE_BUCKET}/"
 
 
@@ -151,7 +157,8 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 #for supabase storage we use django-storages and boto3
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-AWS_ACCESS_KEY_ID = SUPABASE_KEY
+
+AWS_ACCESS_KEY_ID = SUPABASE_KEY  
 AWS_SECRET_ACCESS_KEY = SUPABASE_KEY   # Supabase uses same key for auth
 AWS_STORAGE_BUCKET_NAME = SUPABASE_BUCKET
 AWS_S3_ENDPOINT_URL = f"{SUPABASE_URL}/storage/v1/s3"
