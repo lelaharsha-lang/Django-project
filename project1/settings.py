@@ -27,12 +27,17 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-t)i#fbbqqs+@64k-m$1sonxb(5a(va)u(5)^6b2l^&0prb$tn0'
+#SECRET_KEY = 'django-insecure-t)i#fbbqqs+@64k-m$1sonxb(5a(va)u(5)^6b2l^&0prb$tn0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-project-2-2msp.onrender.com', 'localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['django-project-2-2msp.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'django-project-1-zif3.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 # Application definition
 
@@ -164,7 +169,7 @@ AWS_STORAGE_BUCKET_NAME = SUPABASE_BUCKET
 AWS_S3_ENDPOINT_URL = f"{SUPABASE_URL}/storage/v1/s3"
 
 
-SUPABASE_URL = "https://sdtlqhoojgjxvcxcvpax.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkdGxxaG9vamdqeHZjeGN2cGF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzc4MDksImV4cCI6MjEwMzkxMzgwOX0.Cvu6H9XyXsuO6h5zkazOBy4hx1h2wYN_fm6S2TvlQik"
-SUPABASE_BUCKET = "harsha-django-basic"
+#SUPABASE_URL = "https://sdtlqhoojgjxvcxcvpax.supabase.co"
+#SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkdGxxaG9vamdqeHZjeGN2cGF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzc4MDksImV4cCI6MjEwMzkxMzgwOX0.Cvu6H9XyXsuO6h5zkazOBy4hx1h2wYN_fm6S2TvlQik"
+#SUPABASE_BUCKET = "harsha-django-basic"
 

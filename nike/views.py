@@ -77,24 +77,56 @@ def logout(request):
     auth_logout(request)
     messages.success(request,'Logged out successfully.')
     return redirect('signup')
+#@login_required
+# #def change_password(request):
+#     #form = PasswordChangeForm(user = request.user)
+#     #if request.method == 'POST':
+#       #  form = PasswordChangeForm(user = request.user,data = request.POST)
+#        # if form.is_valid():
+#             #user = form.save()
+#             #update_session_auth_hash(request,user)
+#            # messages.success(request,"Password changed successfully.")
+#             #return redirect('signup')
+#         else:
+#             messages.info(request, "Invalid credentials.")
+#           #  return redirect('change_password') 
+#     else:
+#         form = PasswordChangeForm(user = request.user)
+#         return render(request,"change_password.html",{'form':form})
 @login_required
 def change_password(request):
-    form = PasswordChangeForm(user = request.user)
-    if request.method == 'POST':
-        form = PasswordChangeForm(user = request.user,data = request.POST)
+
+    if request.method == "POST":
+        form = PasswordChangeForm(
+            user=request.user,
+            data=request.POST
+        )
+
         if form.is_valid():
             user = form.save()
-            update_session_auth_hash(request,user)
-            messages.success(request,"Password changed successfully.")
-            return redirect('signup')
+            update_session_auth_hash(request, user)
+
+            messages.success(
+                request,
+                "Password changed successfully."
+            )
+
+            return redirect("signup")
+
         else:
-            messages.info(request, "Invalid credentials.")
-            return redirect('change_password') 
+            messages.error(
+                request,
+                "Please correct the errors below."
+            )
+
     else:
-        form = PasswordChangeForm(user = request.user)
-        return render(request,"change_password.html",{'form':form})
+        form = PasswordChangeForm(user=request.user)
 
-
+    return render(
+        request,
+        "change_password.html",
+        {"form": form}
+    )
 @login_required
 @permission_required('nike.add_blog', raise_exception = True)
 def add_blog_post(request):
