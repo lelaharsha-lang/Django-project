@@ -19,12 +19,12 @@ class Migration(migrations.Migration):
             field=models.CharField(default='null value', max_length=100),
             preserve_default=False,
         ),
-        migrations.AddField(
-                    model_name='user',
-                    name='email',
-                    field=models.EmailField(default='abc@gmail.com', max_length=100),
-                    preserve_default=False,
-                ),
+        # migrations.AddField(
+        #             model_name='user',
+        #             name='email',
+        #             field=models.EmailField(default='abc@gmail.com', max_length=100),
+        #             preserve_default=False,
+        #         ),
         migrations.AddField(
             model_name='user',
             name='mobile_number',

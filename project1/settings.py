@@ -12,11 +12,9 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 import os
 from pathlib import Path
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-import os
 
 SUPABASE_URL = os.getenv("SUPABASE_URL", "https://sdtlqhoojgjxvcxcvpax.supabase.co")
 SUPABASE_BUCKET = os.getenv("SUPABASE_BUCKET", "harsha-django-basic")
@@ -92,16 +90,61 @@ WSGI_APPLICATION = 'project1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.environ.get('DATABASE_URL')
+#     )
+# }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get("DB_NAME", "postgres"),
+#         'USER': os.environ.get("DB_USER", "postgres"),
+#         'PASSWORD': os.environ.get("DB_PASSWORD", "7075538719@H"),  # put your Supabase password here if not using env vars
+#         'HOST': os.environ.get("DB_HOST", "aws-0-ap-south-1.pooler.supabase.com"),
+#         'PORT': os.environ.get("DB_PORT", "5432"),
+#     }
+# }
+
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.environ.get('DATABASE_URL')
+#     )
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres.sdtlqhoojgjxvcxcvpax',
+#         'PASSWORD': os.environ.get('DB_PASSWORD'),
+#         'HOST': 'aws-0-ap-south-1.pooler.supabase.com',
+#         'PORT': '5432',
+#     }
+# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.sdtlqhoojgjxvcxcvpax',
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': 'aws-0-ap-south-1.pooler.supabase.com',
+        'PORT': '5432',
+    }
+}
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
