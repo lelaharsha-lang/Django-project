@@ -3,7 +3,8 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class User(AbstractUser):
-    mobile_number = models.IntegerField(unique=True,null=True)
+   # mobile_number = models.IntegerField(unique=True,null=True)
+    mobile_number = models.CharField(max_length=15, null=True, unique=True)
     image = models.ImageField(upload_to='images/', null=True, blank=True)
     def __str__(self):
         return self.username
