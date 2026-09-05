@@ -13,171 +13,109 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SUPABASE_URL = os.getenv("SUPABASE_URL", "https://sdtlqhoojgjxvcxcvpax.supabase.co")
-SUPABASE_BUCKET = os.getenv("SUPABASE_BUCKET", "harsha-django-basic")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-
-#SECRET_KEY = os.environ.get("SECRET_KEY")
-SECRET_KEY = 'django-insecure-test-key-1234567890-harsha-project'
-
-ALLOWED_HOSTS = ['django-project-1-zif3.onrender.com']
-CSRF_TRUSTED_ORIGINS = ['https://django-project-1-zif3.onrender.com']
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-t)ufs6vvu&%d2+1+p*!=4%n=98be9ob%+*0840%h6vow*k_qopfm'
+# Set SECRET_KEY in Render Environment Variables.
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "django-insecure-local-dev-key-change-this-in-production"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "True").lower() == "true"
 
-#ALLOWED_HOSTS = ['django-project-2-2msp.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    "django-project-1-zif3.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://django-project-1-zif3.onrender.com",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'app1',
-    'nike',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "app1",
+    "nike",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'project1.middleware.RequestLoginMiddleware',
-    'project1.middleware.AdvanceMiddleware',
-    'project1.middleware.FirstMiddleware',
-    'project1.middleware.SecondMiddleware',
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "project1.middleware.RequestLoginMiddleware",
+    "project1.middleware.AdvanceMiddleware",
+    "project1.middleware.FirstMiddleware",
+    "project1.middleware.SecondMiddleware",
 ]
 
-ROOT_URLCONF = 'project1.urls'
+ROOT_URLCONF = "project1.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [BASE_DIR / "templates"],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'project1.wsgi.application'
+WSGI_APPLICATION = "project1.wsgi.application"
 
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default=os.environ.get('DATABASE_URL')
-#     )
-# }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ.get("DB_NAME", "postgres"),
-#         'USER': os.environ.get("DB_USER", "postgres"),
-#         'PASSWORD': os.environ.get("DB_PASSWORD", "7075538719@H"),  # put your Supabase password here if not using env vars
-#         'HOST': os.environ.get("DB_HOST", "aws-0-ap-south-1.pooler.supabase.com"),
-#         'PORT': os.environ.get("DB_PORT", "5432"),
-#     }
-# }
-
-
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default=os.environ.get('DATABASE_URL')
-#     )
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres.sdtlqhoojgjxvcxcvpax",
+        "PASSWORD": os.environ.get("DB_PASSWORD"),
+        "HOST": "aws-0-ap-south-1.pooler.supabase.com",
+        "PORT": "5432",
+    }
+}
 
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres.sdtlqhoojgjxvcxcvpax',
-#         'PASSWORD': os.environ.get('DB_PASSWORD'),
-#         'HOST': 'aws-0-ap-south-1.pooler.supabase.com',
-#         'PORT': '5432',
-#     }
-# }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres.sdtlqhoojgjxvcxcvpax',
-#         'PASSWORD': os.environ.get('DB_PASSWORD'),
-#         'HOST': 'aws-0-ap-south-1.pooler.supabase.com',
-#         'PORT': '5432',
-#     }
-# }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres.sdtlqhoojgjxvcxcvpax',  # <-- copy this from Supabase Session pooler URI
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': 'aws-0-ap-south-1.pooler.supabase.com',
-        'PORT': '5432',
-    }
-}
-
-
-
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "postgres",
-#         "USER": "postgres.sdtlqhoojgjxvcxcvpax",
-#         "PASSWORD": os.environ.get("DB_PASSWORD"),
-#         "HOST": "aws-0-ap-south-1.pooler.supabase.com",  # copy exact host from Supabase Direct connection
-#         "PORT": "5432",
-#     }
-# }
-
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
@@ -185,58 +123,102 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
 USE_TZ = True
 
 
+# -------------------------------------------------------------------
+# Supabase Storage configuration
+# -------------------------------------------------------------------
+
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
+SUPABASE_URL = os.environ.get(
+    "SUPABASE_URL",
+    "https://sdtlqhoojgjxvcxcvpax.supabase.co",
+)
+SUPABASE_BUCKET = os.environ.get(
+    "SUPABASE_BUCKET",
+    "harsha-django-basic",
+)
+
+# Public URL used when templates/views need the bucket URL directly.
+MEDIA_URL = (
+    f"{SUPABASE_URL}/storage/v1/object/public/{SUPABASE_BUCKET}/"
+)
+
+# S3-compatible credentials generated by Supabase Storage.
+AWS_ACCESS_KEY_ID = os.environ.get("SUPABASE_S3_ACCESS_KEY")
+AWS_SECRET_ACCESS_KEY = os.environ.get("SUPABASE_S3_SECRET_KEY")
+AWS_STORAGE_BUCKET_NAME = SUPABASE_BUCKET
+
+AWS_S3_ENDPOINT_URL = f"{SUPABASE_URL}/storage/v1/s3"
+AWS_S3_REGION_NAME = os.environ.get("SUPABASE_S3_REGION")
+AWS_S3_SIGNATURE_VERSION = "s3v4"
+AWS_S3_ADDRESSING_STYLE = "path"
+
+# Django 6 storage configuration.
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS= [os.path.join(BASE_DIR, "static")]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-#STATIC_ROOT = BASE_DIR / "staticfiles"
+# Kept for compatibility with the existing project configuration.
+STATICFILES_STORAGE = (
+    "whitenoise.storage.CompressedManifestStaticFilesStorage"
+)
 
 
-# MEDIA_URL ='/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL = f"{SUPABASE_URL}/storage/v1/object/public/{SUPABASE_BUCKET}/"
-
+# Custom user model
 
 AUTH_USER_MODEL = "app1.User"
 
-LOGIN_URL = 'signup'   
+LOGIN_URL = "signup"
+
+
+# -------------------------------------------------------------------
+# Email / Gmail SMTP
+# -------------------------------------------------------------------
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-# EMAIL_HOST_USER = "lelaharsha@gmail.com"
-# EMAIL_HOST_PASSWORD = "rhmg ybir fytx nyxb"
-
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
-#for supabase storage we use django-storages and boto3
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
-AWS_ACCESS_KEY_ID = SUPABASE_KEY  
-AWS_SECRET_ACCESS_KEY = SUPABASE_KEY   # Supabase uses same key for auth
-AWS_STORAGE_BUCKET_NAME = SUPABASE_BUCKET
-AWS_S3_ENDPOINT_URL = f"{SUPABASE_URL}/storage/v1/s3"
+# -------------------------------------------------------------------
+# Logging
+# -------------------------------------------------------------------
 
-
-#SUPABASE_URL = "https://sdtlqhoojgjxvcxcvpax.supabase.co"
-#SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkdGxxaG9vamdqeHZjeGN2cGF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzc4MDksImV4cCI6MjEwMzkxMzgwOX0.Cvu6H9XyXsuO6h5zkazOBy4hx1h2wYN_fm6S2TvlQik"
-#SUPABASE_BUCKET = "harsha-django-basic"
-
-
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "DEBUG",
+    },
+}
