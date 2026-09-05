@@ -28,10 +28,10 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='user',
             name='mobile_number',
-            field=models.CharField(max_length=15, null=True, unique=True),
+            field=models.CharField(max_length=15,unique=True),
         ),
         migrations.AlterField(
             model_name='user',
             name='password',
-            field=models.CharField(max_length=100, null=True, unique=True),
+            field=models.CharField(max_length=100, unique=True),
         )]

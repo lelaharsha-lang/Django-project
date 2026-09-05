@@ -135,16 +135,43 @@ WSGI_APPLICATION = 'project1.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres.sdtlqhoojgjxvcxcvpax',
+#         'PASSWORD': os.environ.get('DB_PASSWORD'),
+#         'HOST': 'aws-0-ap-south-1.pooler.supabase.com',
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': 'postgres.sdtlqhoojgjxvcxcvpax',
+        'USER': 'postgres.sdtlqhoojgjxvcxcvpax',  # <-- copy this from Supabase Session pooler URI
         'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': 'aws-0-ap-south-1.pooler.supabase.com',
         'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+# }
+
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "postgres",
+#         "USER": "postgres.sdtlqhoojgjxvcxcvpax",
+#         "PASSWORD": os.environ.get("DB_PASSWORD"),
+#         "HOST": "aws-0-ap-south-1.pooler.supabase.com",  # copy exact host from Supabase Direct connection
+#         "PORT": "5432",
+#     }
+# }
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
