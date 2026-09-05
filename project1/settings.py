@@ -23,6 +23,9 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 #SECRET_KEY = os.environ.get("SECRET_KEY")
 SECRET_KEY = 'django-insecure-test-key-1234567890-harsha-project'
 
+ALLOWED_HOSTS = ['django-project-1-zif3.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://django-project-1-zif3.onrender.com']
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
@@ -33,14 +36,6 @@ SECRET_KEY = 'django-insecure-test-key-1234567890-harsha-project'
 DEBUG = True
 
 #ALLOWED_HOSTS = ['django-project-2-2msp.onrender.com', 'localhost', '127.0.0.1']
-ALLOWED_HOSTS = [
-    'django-project-1-zif3.onrender.com',
-    'localhost',
-    '127.0.0.1'
-]
-
-CSRF_TRUSTED_ORIGINS = ['https://your-render-app.onrender.com']
-
 # Application definition
 
 INSTALLED_APPS = [
