@@ -39,6 +39,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1'
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://your-render-app.onrender.com']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -156,9 +158,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-# }
 
 
 # DATABASES = {
