@@ -4,6 +4,7 @@ from django.db.models.functions import Round
 from django.shortcuts import get_object_or_404, render,redirect
 from django.http import Http404, HttpResponse
 from nike.form import BlogForm, UserForm
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm
