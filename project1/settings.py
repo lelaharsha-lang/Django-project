@@ -200,11 +200,12 @@ LOGIN_URL = "signup"
 # Email / Gmail SMTP
 # -------------------------------------------------------------------
 # Email configuration
-EMAIL_BACKEND = "anymail.backends.resend.EmailBackend"
+EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
 
-RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
+#RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
+BREVO_API_KEY = os.environ.get("BREVO_API_KEY")
 
-DEFAULT_FROM_EMAIL = "onboarding@resend.dev"
+DEFAULT_FROM_EMAIL = "lelaharsha@gmail.com"
 
 # EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 # EMAIL_HOST = "smtp.gmail.com"
