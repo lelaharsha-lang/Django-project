@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "app1",
     "nike",
+    "anymail",
 ]
 
 MIDDLEWARE = [
@@ -199,7 +200,7 @@ LOGIN_URL = "signup"
 # Email / Gmail SMTP
 # -------------------------------------------------------------------
 # Email configuration
-EMAIL_BACKEND = "resend.django.backend.EmailBackend"
+EMAIL_BACKEND = "anymail.backends.resend.EmailBackend"
 
 RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
 
