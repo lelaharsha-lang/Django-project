@@ -123,3 +123,16 @@ footer a:hover{
     text-decoration: none;
     color:black;
 }
+/* CSS */
+.profile-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.profile-pic {
+  width: 40px;   /* size of the profile picture */
+  height: 40px;
+  border-radius: 50%; /* makes it circular */
+}

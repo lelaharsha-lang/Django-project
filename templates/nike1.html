@@ -40,10 +40,13 @@
                     <a href="{% url 'add_blog_post' %}">Add Blog Post</a>
                     {% endif %}</p>
                     <a href="{% url 'view_posts' %}">View Blog Posts</a>
-            
-                    <div class="profile-pic">
-                        <img src="{{ user.image.url }}" alt="Profile Picture" width=50px height=50px style="border-radius: 50%;">
-                    </div>
+                    {#  <button class="profile-btn" foramction="{% url 'profile' %}">
+                        <img src="{{ user.image.url }}" alt="Profile" class="profile-pic">
+                    </button>  #}
+                    <a href="{% url 'profile' %}" class="profile-btn">
+                        <img src="{{ user.image.url }}" alt="Profile" class="profile-pic">
+                    </a>
+
                 </div>
         </div>
         <div class="main">
