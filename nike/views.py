@@ -263,4 +263,5 @@ def custom_queries(request):
     expensive_books = Book.objects.expensive()
     return render(request,'custom_queries.html',{'expensive_books':expensive_books})
 
-
+def profile(request):
+    return render(request, 'profile.html')
