@@ -35,11 +35,12 @@
                     <div class="menu">
                         <img src="https://cdn.iconscout.com/icon/free/png-512/free-menu-icon-svg-download-png-528011.png?f=webp&w=512" height="42px">
                     </div>
-
+                    <div class="blog">
                     <p>{% if perms.nike.add_blog_post %}
                     <a href="{% url 'add_blog_post' %}">Add Blog Post</a>
                     {% endif %}</p>
                     <a href="{% url 'view_posts' %}">View Blog Posts</a>
+                    </div>
                     <a href="{% url 'profile' %}" class="profile-btn">
                         <img src="{{ user.image.url }}" alt="Profile" class="profile-pic">
                     </a>
