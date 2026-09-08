@@ -168,6 +168,7 @@ footer a:hover{
     }
     .text {
         margin-left: 0;
+        margin-top:150px;
         text-align: center;
     }
     .main {
@@ -190,6 +191,6 @@ footer a:hover{
         position:absolute;
         top: 90px;
         font-size:16px;
-        justify-content:center
+        justify-content:center;
     }
 }
