@@ -164,7 +164,7 @@ footer a:hover{
         display: flex;
         position:absolute;
         top : 80px;
-        left : 20px;
+        left : 2px;
     }
     .text {
         margin-left: 0;
@@ -185,5 +185,11 @@ footer a:hover{
         position:absolute;
         top: 51px;
         right: 1px;
+    }
+    .blog{
+        position:absolute;
+        top: 90px;
+        font-size:16px;
+        justify-content:center
     }
 }
