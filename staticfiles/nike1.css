@@ -84,6 +84,7 @@ box-shadow: 5px 5px 8px rgba(0,0,0,0.4);
 
 }
 footer{
+    padding: 47px;
     text-align: center;
     align-items: center;
     font-size: 15px;
@@ -122,4 +123,31 @@ footer a:hover{
 .home-tab a{
     text-decoration: none;
     color:black;
+}
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search-tab {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .home-tab {
+        flex-direction: column;
+        gap: 20px;
+        margin-right: 0;
+    }
+    .text {
+        margin-left: 0;
+        text-align: center;
+    }
+    .main {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .images {
+        padding: 20px;
+        margin-left: 0;
+    }
 }
