@@ -8,14 +8,13 @@
 .header{
     display: flex;
     justify-content: space-around;
-    
+    align-items:center;
 }
 .search-tab{
     display:flex;
     align-items: center;
     justify-content: space-between;
     gap:10px;
-    align-items: end;
 }
 .home-tab{
     display: flex;
@@ -73,6 +72,29 @@ box-shadow: 5px 5px 8px rgba(0,0,0,0.4);
     gap:75px;
 
 }
+.signup button {
+    background-color: #1e2429;   /* Nike-style blue */
+    color: #fff;
+    border: none;
+    padding: 6px 18px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgb(154 154 154 / 20%); /* elevation */
+    transition: all 0.3s ease;
+}
+
+.signup button:hover {
+    background-color: #2f72b7;   /* darker blue on hover */
+    box-shadow: 0 6px 10px rgb(241 0 0 / 30%); /* stronger elevation */
+    transform: translateY(-2px); /* subtle lift */
+}
+
+.signup button:active {
+    box-shadow: 0 3px 5px rgb(125 120 120 / 20%); /* pressed look */
+    transform: translateY(1px);
+}
 .images{
     cursor: pointer;
     display:flex;
@@ -115,12 +137,13 @@ box-shadow: 5px 5px 8px rgba(0,0,0,0.4);
         position:absolute;
         right: 3px;
         top: 20px;
+        align-items:center;
         
     }
     .home-tab {
-        gap: 20px;
+        gap: 22px;
         margin: 0px 90px 19px 0;
-        font-size:15px;
+        font-size:16px;
         display: flex;
         position:absolute;
         top : 80px;
@@ -146,4 +169,31 @@ box-shadow: 5px 5px 8px rgba(0,0,0,0.4);
         font-size:16px;
         justify-content:center
     }
+    .signup button {
+    background-color: #1e2429;   /* Nike-style blue */
+    color: #fff;
+    border: none;
+    padding: 6px 18px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgb(154 154 154 / 20%); /* elevation */
+    transition: all 0.3s ease;
+    position:absolute;
+    left: 130px;
+    top: 31px;
+}
+
+.signup button:hover {
+    background-color: #2f72b7;   /* darker blue on hover */
+    box-shadow: 0 6px 10px rgb(241 0 0 / 30%); /* stronger elevation */
+    transform: translateY(-2px); /* subtle lift */
+}
+
+.signup button:active {
+    box-shadow: 0 3px 5px rgb(125 120 120 / 20%); /* pressed look */
+    transform: translateY(1px);
+}
+
 }
