@@ -112,7 +112,7 @@ def change_password(request):
                 "Password changed successfully."
             )
 
-            return redirect("signup")
+            return redirect("nike1")
 
         else:
             messages.error(
