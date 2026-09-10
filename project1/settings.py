@@ -221,6 +221,16 @@ DEFAULT_FROM_EMAIL = "lelaharsha@gmail.com"
 # -------------------------------------------------------------------
 # Logging
 # -------------------------------------------------------------------
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://django-project-1-zif3.onrender.com",
+# ]
+
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+
+# CSRF_COOKIE_SAMESITE = "Lax"
+# SESSION_COOKIE_SAMESITE = "Lax"
+
 
 LOGGING = {
     "version": 1,

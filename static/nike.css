@@ -120,6 +120,19 @@ box-shadow: 5px 5px 8px rgba(0,0,0,0.4);
     text-decoration: none;
     color:black;
 }
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+}
 @media screen and (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -195,6 +208,6 @@ box-shadow: 5px 5px 8px rgba(0,0,0,0.4);
 .signup button:active {
     box-shadow: 0 3px 5px rgb(125 120 120 / 20%); /* pressed look */
     transform: translateY(1px);
-}
+} 
 
 }

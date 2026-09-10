@@ -2,6 +2,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+    .alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+</style>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'nike1.css' %}">
@@ -10,6 +26,11 @@
 <body>
     <div class="body">
         <div class="header">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
                 <div class="nike">
                     <img src="https://cdn.iconscout.com/icon/free/png-512/free-nike-icon-svg-download-png-2673874.png?f=webp&w=512" height="70px">
                 </div>

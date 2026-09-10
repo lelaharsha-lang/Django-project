@@ -1,7 +1,29 @@
 {% load static %}
 <h2>relational_queries:</h2>
+<head>
+<style>
+    .alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+</style>
+</head>
 {% for book in books %}
 <p><b>{{book.title}}</b> was publised on <b>{{book.published_date}}</b>
  written by <b>{{book.author}}</b> for ${{book.price}}
  <hr><hr>
+{% endfor %}
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
 {% endfor %}

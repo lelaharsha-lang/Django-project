@@ -6,6 +6,23 @@
         {{ message }}
     </div>
 {% endfor %}
+<head>
+<style>
+    .alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+</style>
+</head>
 <form method="POST" action="{% url 'edit_blog_post' post.id %}" enctype="multipart/form-data">
     {% csrf_token %}
     Title: <input type="text" name="title" value="{{ post.title }}"><br>

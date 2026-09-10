@@ -117,6 +117,19 @@ footer a:hover{
     font-size: 24px;
     font-weight: 500;
 }
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+}
 .price{
     font-size: 18px;
     font-weight: bold;

@@ -1,3 +1,4 @@
+{% load static %}
 <h3>Delete Blog Posts</h3>
 <link rel="stylesheet" href="{% static 'add_blog_post.css' %}">
 {% for message in messages %}
@@ -5,6 +6,23 @@
         {{ message }}
     </div>
 {% endfor %}
+<head>
+<style>
+    .alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+</style>
+</head>
 <form method="POST">
     {% csrf_token %}
     <p>Are you sure you want to delete the blog post titled "{{ post.title }}"?</p>
